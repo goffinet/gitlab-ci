@@ -97,7 +97,6 @@ pages:
 
 ### Pipeline GitLab CI
 
-
 Référentiel à importer : [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
 ![Pipeline Gitlab pour gitbook](/images/pipeline-gitlab-gitbook-publication.jpg)
@@ -305,9 +304,20 @@ Pipeline :
 - test
 - build
 
-Fichier `.gitlab-ci.yml`
+#### Essai local
+
+```bash
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+cd my-app
+docker run -it -v $PWD/my-app:/my-app maven bash
+exit
+```
+
+
 
 #### Pipeline GitLab CI
+
+Fichier `.gitlab-ci.yml`
 
 ```yaml
 image: maven:latest
@@ -326,6 +336,16 @@ test:
   - java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 ```
 
+#### Initialisation d'un repo gitlab
+
+```bash
+git init
+git add *
+echo "target" >> .gitignore
+git add .gitignore
+git remote add origin https://gitlab.com/account/project.git
+git push -u origin master
+```
 
 ### Second exemple
 
@@ -334,6 +354,16 @@ Cette fois ci avec l'archétype Maven "Webapp" et une phase/job "deploy"
 - test
 - build
 - deploy
+
+#### Déploiement sur Tomcat
+
+...
+
+Méthodes | Authentification
+--- | ---
+SSH et Bash | clé secrète
+SCP | clé secrète
+Text Manager avec curl | login/mot de passe
 
 #### Variables cachées
 
