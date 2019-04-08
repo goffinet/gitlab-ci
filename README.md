@@ -28,6 +28,9 @@ Date de fabrication : {{ gitbook.time }}
 
 ### Essai local avec un exemple Gitlab
 
+Référentiel à importer : [Example GitBook site using GitLab Pages:](https://gitlab.com/pages/gitbook.git)
+
+
 ```bash
 yum -y install git
 ```
@@ -35,6 +38,7 @@ yum -y install git
 ```bash
 git clone https://gitlab.com/pages/gitbook.git
 cd gitbook
+ls -la
 ```
 
 ```bash
@@ -48,7 +52,9 @@ gitbook install
 gitbook serve
 ```
 
-### Fichier .gitlab-ci.yml
+### Pipeline GitLab CI
+
+Fichier .gitlab-ci.yml
 
 ```yaml
 # requiring the environment of NodeJS 10
@@ -86,9 +92,6 @@ pages:
     - master # this job will affect only the 'master' branch
 ```
 
-```bash
-git push
-```
 
 ## 4. CI/CD Gitbook
 
