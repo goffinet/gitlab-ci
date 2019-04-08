@@ -34,6 +34,6 @@
     },
     "variables": {
        "author": "Francois-Emmanuel Goffinet",
-       "repo": "https://gitlab.com/goffinet/gitlab-ci/tree/master/"
+       "repo": "https://github.com/goffinet/gitlab-ci/tree/master/"
     }
 }
