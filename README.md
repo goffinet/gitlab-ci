@@ -6,8 +6,6 @@ Auteur : {{ book.author }}
 
 Date de fabrication : {{ gitbook.time }}
 
-Point de départ : [https://gitlab.com/pages/gitbook](https://gitlab.com/pages/gitbook)
-
 ## Formats ebooks
 
 * [Support en formation PDF](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.pdf)

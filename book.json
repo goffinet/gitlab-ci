@@ -31,5 +31,9 @@
             "caption": "Figure _BOOK_IMAGE_NUMBER_ : _CAPTION_"
 
         }
+    },
+    "variables": {
+       "author": "Francois-Emmanuel Goffinet",
+       "repo": "https://gitlab.com/goffinet/gitlab-ci/tree/master/"
     }
 }
