@@ -14,11 +14,13 @@ Point de départ : [https://gitlab.com/pages/gitbook](https://gitlab.com/pages/g
 * [Support en formation EPUB](/gitlab-ci.epub)
 * [Support en formation MOBI](/gitlab-ci.mobi)
 
-## 1. Introduction à DevOps et à Gitlab-Ci
+## 1. Introduction au projet GitLab
+
+## 2. Introduction à DevOps et à Gitlab-Ci
 
 [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html)
 
-## 2. Projet de départ
+## 3. Projet de départ
 
 [Creating and Tweaking GitLab CI/CD for GitLab Pages | GitLab](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html)
 
@@ -90,7 +92,7 @@ pages:
 git push
 ```
 
-## 3. CI/CD Gitbook
+## 4. CI/CD Gitbook
 
 Référentiel à importer : [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
@@ -218,7 +220,7 @@ pages:
     - master
 ```
 
-## 4. CI/CD Jekyll
+## 5. CI/CD Jekyll
 
 Référentiel à importer : [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
 
@@ -245,7 +247,7 @@ pages:
   - gitlab
 ```
 
-## 5. CI/CD Mkdocs
+## 6. CI/CD Mkdocs
 
 Référentiel à importer : [mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
 
@@ -268,11 +270,13 @@ pages:
   - master
 ```
 
-## 6. CI/CD Maven - Apache Tomcat
+## 7. CI/CD Maven - Apache Tomcat
 
 https://docs.gitlab.com/ee/ci/examples/artifactory_and_gitlab/
 
-Exemple CI/CD avec Maven, lecture de l'exemple et application https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html.
+### Premier exemple
+
+Exemple CI/CD avec Maven, lecture de l'exemple et application selon le document [Maven in five minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 
 Créer un dépôt sur Gilab et le cloner localement.
 
@@ -284,10 +288,51 @@ Pipeline :
 
 - test
 - build
-- deploy : sur un serveur Apache Tomcat
+
+Fichier `.gitlab-ci.yml`
+
+```yaml
+image: maven:latest
+
+build:
+  stage: build
+  script:
+  - mvn package
+  artifacts:
+    paths:
+    - target
+
+test:
+  stage: test
+  script:
+  - java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+```
+
+
+### Second exemple
+
+Cette fois ci avec l'archétype Maven "Webapp" et une phase/job "deploy"
+
+- test
+- build
+- deploy
 
 Variables cachées.
 
-Gitlab-runner local.
+Exécution sur un Gitlab-runner qui héberge le serveur applicatif.
 
 Avertissement Slack.
+
+## 8. Installation d'un serveur GitLab CE
+
+### Installation par dépôt de paquetage
+
+[How to Install and Configure GitLab CE on CentOS 7](https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-ce-on-centos-7/).
+
+### Modèle AWS CloudFormation
+
+...
+
+## 9. Administration d'un serveur GitLab
+
+...
