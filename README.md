@@ -14,7 +14,7 @@ Date de fabrication : {{ gitbook.time }}
 
 ## 1. Introduction au projet GitLab
 
-## 2. Introduction à DevOps et à Gitlab-Ci
+## 2. Introduction à DevOps et à GitLab CI
 
 [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html)
 
@@ -91,6 +91,9 @@ git push
 ```
 
 ## 4. CI/CD Gitbook
+
+### Pipeline GitLab CI
+
 
 Référentiel à importer : [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
@@ -218,7 +221,13 @@ pages:
     - master
 ```
 
+### Déploiement sur Netlify
+
+[![Deployer sur Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/goffinet/mkdocs-material-boilerplate)
+
 ## 5. CI/CD Jekyll
+
+### Pipeline GitLab CI
 
 Référentiel à importer : [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
 
@@ -247,6 +256,8 @@ pages:
 
 ## 6. CI/CD Mkdocs
 
+### Pipeline GitLab CI
+
 Référentiel à importer : [mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
 
 Fichier `gitlab-ci.yml` :
@@ -268,6 +279,10 @@ pages:
   - master
 ```
 
+### Déploiement sur Netlify
+
+[![Deployer sur Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/goffinet/mkdocs-material-boilerplate)
+
 ## 7. CI/CD Maven - Apache Tomcat
 
 https://docs.gitlab.com/ee/ci/examples/artifactory_and_gitlab/
@@ -288,6 +303,8 @@ Pipeline :
 - build
 
 Fichier `.gitlab-ci.yml`
+
+#### Pipeline GitLab CI
 
 ```yaml
 image: maven:latest
@@ -315,11 +332,23 @@ Cette fois ci avec l'archétype Maven "Webapp" et une phase/job "deploy"
 - build
 - deploy
 
-Variables cachées.
+#### Variables cachées
 
-Exécution sur un Gitlab-runner qui héberge le serveur applicatif.
+...
 
-Avertissement Slack.
+#### Gitlab Runner
+
+Exécution sur un Gitlab-Runner qui héberge le serveur applicatif.
+
+...
+
+#### Avertissement Slack
+
+...
+
+#### Pipeline GitLab CI
+
+...
 
 ## 8. Installation d'un serveur GitLab CE
 
