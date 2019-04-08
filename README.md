@@ -10,9 +10,9 @@ Point de départ : [https://gitlab.com/pages/gitbook](https://gitlab.com/pages/g
 
 ## Formats ebooks
 
-* [Support en formation PDF](/gitlab-ci.pdf)
-* [Support en formation EPUB](/gitlab-ci.epub)
-* [Support en formation MOBI](/gitlab-ci.mobi)
+* [Support en formation PDF](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.pdf)
+* [Support en formation EPUB](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.epub)
+* [Support en formation MOBI](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.mobi)
 
 ## 1. Introduction au projet GitLab
 
