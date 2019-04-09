@@ -31,7 +31,7 @@ La documentation de GitLab CI sur trouve à l'adresse [https://docs.gitlab.com/e
 
 ![Stages of the DevOps lifecycle](https://about.gitlab.com/images/stages-devops-lifecycle/devops-loop-and-spans-small.png)
 
-Un cycle de vie DevOps se compose de différentes étapes en boucle : "Manage", "Plan", "Create", "Verify", "Package", "Release", "Monitor", "Secure".
+Un cycle de vie DevOps se compose de différentes étapes en boucle : "Plan", "Create", "Verify", "Package", "Release", "Monitor". De manière transversale "Manage" et "Secure" s'intéressent à toutes les étapes du cycle.
 
 ![Stages of the DevOps lifecycle](https://docs.gitlab.com/ee/img/devops-stages.png)
 
