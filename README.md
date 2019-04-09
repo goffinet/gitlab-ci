@@ -27,17 +27,19 @@ Produits :
 
 ![Stages of the DevOps lifecycle](https://about.gitlab.com/images/stages-devops-lifecycle/devops-loop-and-spans-small.png)
 
+![Stages of the DevOps lifecycle](https://docs.gitlab.com/ee/img/devops-stages.png)
+
 DevOps Stage | Documentation
 --- | ---
-Manage | Statistics and analytics features.
-Plan| Project planning and management features.
-Create | Source code and data creation and management features.
-Verify| Testing, code quality, and continuous integration features.
-Package | Docker container registry.
-Release	Application release and delivery features.
-Configure	Application and infrastructure configuration tools.
-Monitor	Application monitoring and metrics features.
-Secure	Security capability features.
+[Manage](https://docs.gitlab.com/ee/README.html#manage) | Statistiques et fonctions d'analyse.
+[Plan](https://docs.gitlab.com/ee/README.html#plan) | Planification et gestion de projet.
+[Create](https://docs.gitlab.com/ee/README.html#create) | Fonctions SCM (Source Code Management)
+[Verify](https://docs.gitlab.com/ee/README.html#verify) | Tests, qualité du code et fonctions d'intégration continue.
+[Package](https://docs.gitlab.com/ee/README.html#package) | Registre des conteneurs Docker.
+[Release](https://docs.gitlab.com/ee/README.html#release) | Release et de livraison de l'application.
+[Configure](https://docs.gitlab.com/ee/README.html#configure) | Outils de configuration d'applications et d'infrastructures.
+[Monitor](https://docs.gitlab.com/ee/README.html#monitor) | Fonctions de surveillance et de métrique des applications.
+[Secure](https://docs.gitlab.com/ee/README.html#secure) | Fonctionnalités de sécurité.
 
 
 ## 3. Projet de départ GitLab CI avec Pages
