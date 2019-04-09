@@ -27,7 +27,7 @@ Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbuc
 
 ## 2. Introduction à DevOps et à GitLab CI
 
-[https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html)
+La documentation de GitLab CI sur trouve à l'adresse [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html).
 
 ![Stages of the DevOps lifecycle](https://about.gitlab.com/images/stages-devops-lifecycle/devops-loop-and-spans-small.png)
 
