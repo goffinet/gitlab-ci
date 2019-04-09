@@ -14,12 +14,16 @@ Téléchargements des supports
 
 ## 1. Introduction au projet GitLab
 
-Produits :
+GitLab est un outil de gestion du cycle de vie de DevOps basé Web qui fournit un gestionnaire de référentiel Git fournissant des fonctionnalités wiki, de suivi des problèmes et de pipeline CI/CD. Il est développé sous licence open-source par GitLab Inc.
+
+Le logiciel se décline en quatre produits :
 
 * GitLab CE (Community Edition) - auto-hébergé et grauit, support communautaire.
 * GitLab EE (Enterprise Edition) - auto-hébergé et payant, fonctionnalités supplémentaires.
 * GitLab.com - SaaS et gratuit.
 * GitLab.io - Instance privée gérée par GitLab Inc.
+
+Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbucket](https://bitbucket.org/).
 
 ## 2. Introduction à DevOps et à GitLab CI
 
@@ -29,7 +33,7 @@ Produits :
 
 ![Stages of the DevOps lifecycle](https://docs.gitlab.com/ee/img/devops-stages.png)
 
-DevOps Stage | Documentation
+DevOps Stage | Description
 --- | ---
 [Manage](https://docs.gitlab.com/ee/README.html#manage) | Statistiques et fonctions d'analyse.
 [Plan](https://docs.gitlab.com/ee/README.html#plan) | Planification et gestion de projet.
