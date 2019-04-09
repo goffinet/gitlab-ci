@@ -28,7 +28,7 @@ Date de fabrication : {{ gitbook.time }}
 
 ### Essai local avec un exemple Gitlab
 
-Référentiel à importer : [Example GitBook site using GitLab Pages:](https://gitlab.com/pages/gitbook.git)
+Référentiel à importer : [Example GitBook site using GitLab Pages](https://gitlab.com/pages/gitbook.git)
 
 
 ```bash
