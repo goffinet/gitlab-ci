@@ -14,17 +14,47 @@ Date de fabrication : {{ gitbook.time }}
 
 ## 1. Introduction au projet GitLab
 
+Produits :
+
+* GitLab CE (Community Edition) - auto-hébergé et grauit, support communautaire.
+* GitLab EE (Enterprise Edition) - auto-hébergé et payant, fonctionnalités supplémentaires.
+* GitLab.com - SaaS et gratuit.
+* GitLab.io - Instance privée gérée par GitLab Inc.
+
 ## 2. Introduction à DevOps et à GitLab CI
 
 [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html)
 
-## 3. Projet de départ
+![Stages of the DevOps lifecycle](https://about.gitlab.com/images/stages-devops-lifecycle/devops-loop-and-spans-small.png)
+
+DevOps Stage | Documentation
+--- | ---
+Manage | Statistics and analytics features.
+Plan| Project planning and management features.
+Create | Source code and data creation and management features.
+Verify| Testing, code quality, and continuous integration features.
+Package | Docker container registry.
+Release	Application release and delivery features.
+Configure	Application and infrastructure configuration tools.
+Monitor	Application monitoring and metrics features.
+Secure	Security capability features.
+
+
+## 3. Projet de départ GitLab CI avec Pages
+
+GitLab Pages est une fonctionnalité qui permet de publier des sites web statiques directement à partir d'un référentiel dans GitLab.
 
 [Creating and Tweaking GitLab CI/CD for GitLab Pages | GitLab](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html)
 
-[Job spécial Pages et dossier `public/`](https://docs.gitlab.com/ee/ci/yaml/#pages)
+Un "pipeline" est une suite de "stages", soit un flux d'étapes. Un "stage" exécute des jobs. Ceux-ci sont définit par des variables, des commandes et la génération d'"artifacts". Un "artifacts" est le résultats d'une exécution gardé en mémoire pour traitement dans le "pipeline".
+
+L'exécution des jobs sont réalisées dans des conteneurs Docker sur n'importe quel machine ou Pod K8s (Kubernetes) enregistrés comme "Gitlab Runner".
 
 [GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/README.html)
+
+Un "job" spécial nommé "pages" génère tous les "artifacts" d'un site web dans le dossier spécial `public`.
+
+[Job spécial Pages et dossier `public/`](https://docs.gitlab.com/ee/ci/yaml/#pages)
 
 ### Essai local avec un exemple Gitlab
 
