@@ -22,7 +22,7 @@ Date de fabrication : {{ gitbook.time }}
 
 [Creating and Tweaking GitLab CI/CD for GitLab Pages | GitLab](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html)
 
-[Job spécial Pages et dossier public/](https://docs.gitlab.com/ee/ci/yaml/#pages)
+[Job spécial Pages et dossier `public/`](https://docs.gitlab.com/ee/ci/yaml/#pages)
 
 [GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/README.html)
 
