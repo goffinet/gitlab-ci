@@ -25,7 +25,7 @@ Le logiciel se décline en quatre produits :
 
 Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbucket](https://bitbucket.org/).
 
-## 2. Introduction à DevOps et à GitLab CI
+## 2. Introduction à DevOps avec GitLab CI
 
 La documentation de GitLab CI sur trouve à l'adresse [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html).
 
