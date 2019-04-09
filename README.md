@@ -6,7 +6,7 @@ Auteur : {{ book.author }}
 
 Date de fabrication : {{ gitbook.time }}
 
-#### Téléchargements des supports
+Téléchargements des supports
 
 * [Support en formation PDF](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.pdf)
 * [Support en formation EPUB](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.epub)
