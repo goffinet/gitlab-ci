@@ -1,8 +1,10 @@
 drafts/
 _book/
 node_modules/
-.git*
-Dockerfile
+.git
+.gitattributes
+.gitignore
+.gitlab-ci.yml*
 Jenkins*
 package.json
 markdownlint.json
