@@ -9,3 +9,5 @@ Jenkins*
 package.json
 markdownlint.json
 .bookignore
+Dockerfile
+_redirects
