@@ -12,6 +12,8 @@ Téléchargements des supports
 * [MOBI](mobi.md)
 * [EPUB](epub.md)
 
+![Image de couverture](cover_small.jpg)
+
 ## 1. Introduction au projet GitLab
 
 [GitLab](https://gitlab.com/) est un outil de gestion du cycle de vie de DevOps basé Web qui fournit un gestionnaire de référentiel Git fournissant des fonctionnalités wiki, de suivi des problèmes et de pipeline CI/CD. Il est développé sous licence open-source par GitLab Inc.
