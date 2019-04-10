@@ -1,7 +1,5 @@
 # Notes sur GitLab CI
 
-<!-- toc -->
-
 Auteur : {{ book.author }}
 
 Date de fabrication : {{ gitbook.time }}
@@ -12,7 +10,9 @@ Téléchargements des supports
 * [MOBI](https://gitlab-ci.goffinet.org/mobi.html)
 * [EPUB](https://gitlab-ci.goffinet.org/epub.html)
 
-![Image de couverture](cover_small.jpg)
+![](cover_small.jpg)
+
+<!-- toc -->
 
 ## 1. Introduction au projet GitLab
 
