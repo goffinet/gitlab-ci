@@ -8,9 +8,9 @@ Date de fabrication : {{ gitbook.time }}
 
 Téléchargements des supports
 
-* [PDF](pdf.md)
-* [MOBI](mobi.md)
-* [EPUB](epub.md)
+* [PDF](https://gitlab-ci.goffinet.org/pdf.html)
+* [MOBI](https://gitlab-ci.goffinet.org/mobi.html)
+* [EPUB](https://gitlab-ci.goffinet.org/epub.html)
 
 ![Image de couverture](cover_small.jpg)
 
