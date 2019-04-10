@@ -11,3 +11,4 @@ markdownlint.json
 .bookignore
 Dockerfile
 _redirects
+netlify.toml
