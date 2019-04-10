@@ -29,7 +29,12 @@
     "pluginsConfig": {
         "image-captions": {
             "caption": "Figure _BOOK_IMAGE_NUMBER_ : _CAPTION_"
-
+        },
+        "ga": {
+            "token": "UA-21733018-17"
+        },
+        "sitemap": {
+            "hostname": "https://gitlab-ci.goffinet.org/"
         }
     },
     "variables": {

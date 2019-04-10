@@ -1,35 +1,34 @@
 {
-  "name": "gitbook-publication",
+  "name": "gitlab-ci",
   "version": "1.0.0",
-  "description": "AWS 11-2018",
+  "description": "Gitlab CI",
   "main": "index.js",
   "dependencies": {
+    "gitbook": "^3.2.3",
+    "gitbook-cli": "^2.3.2",
     "gitbook-plugin-atoc": "^1.0.3",
+    "gitbook-plugin-ga": "^1.0.1",
     "gitbook-plugin-google-drive-video": "^1.0.4",
     "gitbook-plugin-hints": "^1.0.2",
     "gitbook-plugin-image-captions": "^3.1.0",
-    "gitbook-plugin-livereload": "^0.0.1",
     "gitbook-plugin-katex": "^1.1.4",
-    "gitbook-plugin-search-plus": "^1.0.3"
+    "gitbook-plugin-livereload": "^0.0.1",
+    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-sitemap": "^1.2.0",
+    "gitbook-plugin-redirect": "^0.0.7"
   },
-  "devDependencies": {
-    "gitbook-cli": "^2.3.0"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goffinet/gitbook-publication.git"
+    "url": "git+https://github.com/goffinet/gitlab-ci.git"
   },
-  "keywords": [
-    "ansible",
-    "network-automation"
-  ],
-  "author": "Francois-Emmanuel GOFFINET",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goffinet/gitbook-publication/issues"
+    "url": "https://github.com/goffinet/gitlab-ci/issues"
   },
-  "homepage": "https://github.com/goffinet/gitbook-publication#readme"
+  "homepage": "https://github.com/goffinet/gitlab-ci#readme"
 }

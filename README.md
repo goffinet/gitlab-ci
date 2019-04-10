@@ -8,9 +8,9 @@ Date de fabrication : {{ gitbook.time }}
 
 Téléchargements des supports
 
-* [Support en formation PDF](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.pdf)
-* [Support en formation EPUB](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.epub)
-* [Support en formation MOBI](https://goffinet.gitlab.io/gitlab-ci/gitlab-ci.mobi)
+* [PDF](pdf.md)
+* [MOBI](mobi.md)
+* [EPUB](epub.md)
 
 ## 1. Introduction au projet GitLab
 
