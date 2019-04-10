@@ -10,7 +10,10 @@
         "livereload",
         "katex",
         "google-drive-video",
-        "image-captions"
+        "image-captions",
+        "ga",
+        "sitemap",
+        "redirect"
     ],
     "pdf": {
         "margin": {
