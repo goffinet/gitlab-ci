@@ -10,7 +10,7 @@ Téléchargements des supports
 * [MOBI](https://gitlab-ci.goffinet.org/mobi.html)
 * [EPUB](https://gitlab-ci.goffinet.org/epub.html)
 
-![](cover_small.jpg)
+![Page de garde](cover_small.jpg)
 
 <!-- toc -->
 
