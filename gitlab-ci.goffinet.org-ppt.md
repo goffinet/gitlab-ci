@@ -1,35 +1,31 @@
+footer: ![3%](./images/gitlab-logo-gray-rgb.png) Intégration continue avec GitLab CI, F-E Goffinet, 2021
+slidenumbers: true
+autoscale: true
+theme: Plain Jane, 1
+slide-dividers: #,##,###,####
+
 # Intégration continue avec GitLab CI
 
-Auteur : {{ book.author }}
+![inline](./images/gitlab-logo-gray-rgb.png)
 
-Date de fabrication : {{ gitbook.time }}, v1.0
-
-<!--
-Téléchargements des supports
-
-* [PDF](https://gitlab-ci.goffinet.org/pdf.html)
-* [MOBI](https://gitlab-ci.goffinet.org/mobi.html)
-* [EPUB](https://gitlab-ci.goffinet.org/epub.html)
-
-![Page de garde](cover_small.jpg)
--->
-
-## Téléchargements des supports
+# Téléchargements des supports
 
 * [PDF](https://gitlab-ci.goffinet.org/gitlab-ci.goffinet.org.pdf)
 * [MOBI](https://gitlab-ci.goffinet.org/gitlab-ci.goffinet.org.mobi)
 * [EPUB](https://gitlab-ci.goffinet.org/gitlab-ci.goffinet.org.epub)
 * [PPT](https://gitlab-ci.goffinet.org/gitlab-ci.goffinet.org-ppt.pdf)
 
-![Page de garde](cover_small.jpg)
+![right fit](cover.jpg)
 
 <!-- toc -->
 
-## 1. Introduction au projet GitLab
+# 1. Introduction au projet GitLab
+
+---
 
 [GitLab](https://gitlab.com/) est un outil de gestion du cycle de vie de DevOps basé Web qui fournit un gestionnaire de référentiel Git fournissant des fonctionnalités wiki, de suivi des problèmes et de pipeline CI/CD. Il est développé sous licence open-source par GitLab Inc.
 
-![Logo Gitlab](/images/gitlab-logo-gray-rgb.png)
+---
 
 Le logiciel se décline en quatre produits :
 
@@ -38,17 +34,25 @@ Le logiciel se décline en quatre produits :
 * GitLab.com - SaaS et gratuit.
 * GitLab.io - Instance privée gérée par GitLab Inc.
 
-Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbucket](https://bitbucket.org/).
+---
 
-## 2. Introduction à DevOps avec GitLab CI
+>Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbucket](https://bitbucket.org/).
+
+# 2. Introduction à DevOps avec GitLab CI
+
+---
 
 La documentation de GitLab CI sur trouve à l'adresse [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html).
 
-![Stages of the DevOps lifecycle](/images/devops-lifecycle.png)
+![inline](./images/devops-lifecycle.png)
+
+---
 
 Un cycle de vie DevOps se compose de différentes étapes en boucle : "Plan", "Create", "Verify", "Package", "Release", "Monitor". De manière transversale "Manage" et "Secure" s'intéressent à toutes les étapes du cycle.
 
-![Stages of the DevOps lifecycle](/images/devops-stages.png)
+![inline](./images/devops-stages.png)
+
+---
 
 | DevOps Stage | Description |
 | --- | --- |
@@ -62,18 +66,18 @@ Un cycle de vie DevOps se compose de différentes étapes en boucle : "Plan", "C
 | [Monitor](https://docs.gitlab.com/ee/README.html#monitor) | Fonctions de surveillance et de métrique des applications. |
 | [Secure](https://docs.gitlab.com/ee/README.html#secure) | Fonctionnalités de sécurité. |
 
-### Informations de départ
+## Informations de départ
 
 [Get started with GitLab](https://docs.gitlab.com/ce/intro/)
 
-### Organize
+## Organize
 
 Create projects and groups.
 
 - [Create a new project](https://docs.gitlab.com/ce/gitlab-basics/create-project.md)
 - [Create a new group](https://docs.gitlab.com/ce/user/group/index.md#create-a-new-group)
 
-### Prioritize
+## Prioritize
 
 Create issues, labels, milestones, cast your vote, and review issues.
 
@@ -82,7 +86,7 @@ Create issues, labels, milestones, cast your vote, and review issues.
 - [Use milestones as an overview of your project's tracker](https://docs.gitlab.com/ce/user/project/milestones/index.md)
 - [Use voting to express your like/dislike to issues and merge requests](https://docs.gitlab.com/ce/user/award_emojis.md)
 
-### Collaborate
+## Collaborate
 
 Create merge requests and review code.
 
@@ -93,13 +97,13 @@ Create merge requests and review code.
 - [Revert any commit](https://docs.gitlab.com/ce/user/project/merge_requests/revert_changes.md)
 - [Cherry-pick any commit](https://docs.gitlab.com/ce/user/project/merge_requests/cherry_pick_changes.md)
 
-### Test and Deploy
+## Test and Deploy
 
 Use the built-in continuous integration in GitLab.
 
 - [Get started with GitLab CI/CD](https://docs.gitlab.com/ce/ci/quick_start/README.md)
 
-### Install and Update
+## Install and Update
 
 Install and update your GitLab installation.
 
@@ -107,26 +111,35 @@ Install and update your GitLab installation.
 - [Update GitLab](https://about.gitlab.com/update/)
 - [Explore Omnibus GitLab configuration options](https://docs.gitlab.com/omnibus/settings/configuration.html)
 
-## 3. Projet de départ GitLab CI avec Pages
+# 3. Projet de départ GitLab CI avec Pages
+
+---
 
 GitLab Pages est une fonctionnalité qui permet de publier des sites web statiques directement à partir d'un référentiel dans GitLab. La documentation de départ accessible à partir de cette page : [Creating and Tweaking GitLab CI/CD for GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html).
 
+---
+
 Un cycle d'intégration continue dans Gitlab CI est défini à partir d'un fichier de configuration écrit en YAML. Le fichier est placé à la racine du projet sous le nom réservé de `.gitlab-ci.yml`.
 
+---
+
 Un "pipeline" est une suite de "stages", soit un flux d'étapes. Un "stage" exécute des jobs. Ceux-ci sont définit par des variables, des commandes et la génération d'"artifacts". Un "artifacts" est le résultats d'une exécution gardé en mémoire pour traitement dans le "pipeline".
+
+---
 
 L'exécution des jobs sont réalisées dans des conteneurs Docker sur n'importe quel machine ou Pod K8s (Kubernetes) enregistrés comme "Gitlab Runner".
 
 [GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/README.html)
 
+---
+
 Un "job" spécial nommé "pages" génère tous les "artifacts" d'un site web dans le dossier spécial `public`.
 
 [Job spécial Pages et dossier `public/`](https://docs.gitlab.com/ee/ci/yaml/#pages)
 
-### Essai local avec un exemple Gitlab
+## Essai local avec un exemple Gitlab
 
 Référentiel à importer : [Example GitBook site using GitLab Pages](https://gitlab.com/pages/gitbook.git)
-
 
 ```bash
 yum -y install git
@@ -137,6 +150,8 @@ git clone https://gitlab.com/pages/gitbook.git
 cd gitbook
 ls -la
 ```
+
+---
 
 ```bash
 docker run -it -p 4000:4000 -v $PWD:/gitbook node:latest bash
@@ -149,9 +164,11 @@ gitbook install
 gitbook serve
 ```
 
-### Pipeline GitLab CI
+## Pipeline GitLab CI
 
 Fichier .gitlab-ci.yml
+
+---
 
 ```yaml
 # requiring the environment of NodeJS 10
@@ -190,13 +207,17 @@ pages:
 ```
 
 
-## 4. CI/CD Gitbook
+# 4. CI/CD Gitbook
 
-### Pipeline GitLab CI
+---
+
+## Pipeline GitLab CI
 
 Référentiel à importer : [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
-![Pipeline Gitlab pour gitbook](/images/pipeline-gitlab-gitbook-publication.jpg)
+![right fit](./images/pipeline-gitlab-gitbook-publication.jpg)
+
+---
 
 Fichier `gitlab-ci.yml` :
 
@@ -208,7 +229,11 @@ stages:
   - deploy
 
 image: goffinet/gitbook:latest
+```
 
+---
+
+```yaml
 # the 'gitbook' job will test the gitbook tools
 gitbook:
   stage: test
@@ -218,7 +243,11 @@ gitbook:
     - gitbook -V
     - calibre --version
   allow_failure: false
+```
 
+---
+
+```yaml
 # the 'lint' job will test the markdown syntax
 lint:
   stage: test
@@ -228,7 +257,11 @@ lint:
     - markdownlint --config ./markdownlint.json README.md
     - markdownlint --config ./markdownlint.json *.md
   allow_failure: true
+```
 
+---
+
+```yaml
 # the 'html' job will build your document in html format
 html:
   stage: build
@@ -245,7 +278,11 @@ html:
   only:
     - master # this job will affect only the 'master' branch the 'html' job will build your document in pdf format
   allow_failure: false
+```
 
+---
+
+```yaml
 # the 'pdf' job will build your document in pdf format
 pdf:
   stage: build
@@ -263,7 +300,11 @@ pdf:
     expire_in: 1 day
   only:
     - master # this job will affect only the 'master' branch the 'pdf' job will build your document in pdf format
+```
 
+---
+
+```yaml
 # the 'epub' job will build your document in epub format
 epub:
   stage: build
@@ -281,7 +322,11 @@ epub:
     expire_in: 1 day
   only:
     - master # this job will affect only the 'master' branch
+```
 
+---
+
+```yaml
 # the 'mobi' job will build your document in mobi format
 mobi:
   stage: build
@@ -299,7 +344,11 @@ mobi:
     expire_in: 1 day
   only:
     - master # this job will affect only the 'master' branch
+```
 
+---
+
+```yaml
 # the 'pages' job will deploy your site to your gitlab pages service
 pages:
   stage: deploy
@@ -320,13 +369,15 @@ pages:
     - master
 ```
 
-### Déploiement sur Netlify
+## Déploiement sur Netlify
 
 ...
 
-## 5. CI/CD Jekyll
+# 5. CI/CD Jekyll
 
-### Pipeline GitLab CI
+---
+
+## Pipeline GitLab CI
 
 Référentiel à importer : [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
 
@@ -353,9 +404,11 @@ pages:
   - gitlab
 ```
 
-## 6. CI/CD Mkdocs
+# 6. CI/CD Mkdocs
 
-### Pipeline GitLab CI
+---
+
+## Pipeline GitLab CI
 
 Référentiel à importer : [mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
 
@@ -378,15 +431,19 @@ pages:
   - master
 ```
 
-### Déploiement sur Netlify
+## Déploiement sur Netlify
 
-[![Deployer sur Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/goffinet/mkdocs-material-boilerplate)
+[Deployer sur Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/goffinet/mkdocs-material-boilerplate)
 
-## 7. CI/CD Maven - Apache Tomcat
+# 7. CI/CD Maven - Apache Tomcat
+
+---
 
 [Artifactory and Gitlab](https://docs.gitlab.com/ee/ci/examples/artifactory_and_gitlab/)
 
-### Premier exemple
+## Premier exemple
+
+---
 
 Exemple CI/CD avec Maven, lecture de l'exemple et application selon le document [Maven in five minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 
@@ -401,16 +458,19 @@ Pipeline :
 - test
 - build
 
-#### Essai local
+## Essai local
 
 ```bash
-mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app \
+-DartifactId=my-app \
+-DarchetypeArtifactId=maven-archetype-quickstart \
+-DarchetypeVersion=1.4 -DinteractiveMode=false
 cd my-app
 docker run -it -v $PWD/my-app:/my-app maven bash
 exit
 ```
 
-#### Pipeline GitLab CI
+## Pipeline GitLab CI
 
 Fichier `.gitlab-ci.yml`
 
@@ -431,7 +491,7 @@ test:
   - java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 ```
 
-#### Initialisation d'un repo gitlab
+## Initialisation d'un repo gitlab
 
 ```bash
 git init
@@ -442,7 +502,9 @@ git remote add origin https://gitlab.com/account/project.git
 git push -u origin master
 ```
 
-### Second exemple
+## Second exemple
+
+---
 
 Cette fois ci avec l'archétype Maven "Webapp" et une phase/job "deploy"
 
@@ -450,7 +512,7 @@ Cette fois ci avec l'archétype Maven "Webapp" et une phase/job "deploy"
 - build
 - deploy
 
-#### Déploiement sur Tomcat
+## Déploiement sur Tomcat
 
 ...
 
@@ -460,29 +522,33 @@ SSH et Bash | clé secrète
 SCP | clé secrète
 Text Manager avec curl | login/mot de passe
 
-#### Variables cachées
+## Variables cachées
 
 ...
 
-#### Gitlab Runner
+## Gitlab Runner
 
 Exécution sur un Gitlab-Runner qui héberge le serveur applicatif.
 
 ...
 
-#### Avertissement Slack
+## Avertissement Slack
 
 ...
 
-#### Pipeline GitLab CI
+## Pipeline GitLab CI
 
 ...
 
-## 8. PHP projects
+# 8. PHP projects
+
+---
 
 [Test PHP projects using the Docker executor](https://docs.gitlab.com/ee/ci/examples/php.html#test-php-projects-using-the-docker-executor)
 
 [PHP (PHP.gitlab-ci.yml)](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/PHP.gitlab-ci.yml)
+
+---
 
 ```yaml
 # Select image from https://hub.docker.com/_/php/
@@ -495,7 +561,7 @@ cache:
 
 before_script:
   - apt-get update -yqq
-  - apt-get install -yqq git libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev
+  - apt-get install -yqq git ... libpcre3-dev libtidy-dev
   # Install PHP extensions
   - docker-php-ext-install mbstring mcrypt pdo_pgsql curl json intl gd xml zip bz2 opcache
   # Install & enable Xdebug for code coverage reports
@@ -504,7 +570,11 @@ before_script:
   # Install and run Composer
   - curl -sS https://getcomposer.org/installer | php
   - php composer.phar install
+```
 
+---
+
+```yaml
 # Bring in any services we need http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
 # See http://docs.gitlab.com/ee/ci/services/README.html for examples.
 services:
@@ -524,23 +594,27 @@ test:
 
 ```
 
-## 9. Installation d'un serveur GitLab CE
+# 9. Installation d'un serveur GitLab CE
 
-### Omibus
+---
+
+## Omibus
 
 [Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est une fourchette personnalisée du projet Omnibus de Chef, et il utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration de GitLab dans l'ordinateur d'un utilisateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires de l'Omnibus GitLab. Cela comprend les parties de l'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés au Chef qui seront utilisés dans l'ordinateur d'un utilisateur après l'installation.
 
-![Omnibus GitLab Architecture and Components](/images/gitlab-components.png)
+![right fit](./images/gitlab-components.png)
 
 Source de l'image : [Omnibus GitLab Architecture and Components](https://docs.gitlab.com/omnibus/architecture/README.html)
 
-### Installation par Omnibus
+## Installation par Omnibus
 
 Nous choisissons [une installation par Omnibus](https://docs.gitlab.com/omnibus/manual_install.html).
 
 Le variable `${EXTERNAL_URL}` décide l'usage de HTTP ou HTTPS.
 
 On installe un packet rpm sur Centos 7.
+
+---
 
 ```bash
 #tls=no
@@ -553,20 +627,27 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 1000 -nod
 else
 export EXTERNAL_URL="https://${DNSDOMAIN}"
 fi
+```
+---
+
+```bash
 export GITLAB_VERSION="13.7.1"
 yum -y install policycoreutils-python
 yum -y install wget
-wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/7/gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm/download.rpm
+repo="https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/7"
+wget --content-disposition ${repo}/gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm/download.rpm
 export LC_ALL="en_US.UTF-8"
 echo 'export LC_ALL="en_US.UTF-8"' >> .bashrc
 rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 ```
 
+---
+
 A la première connexion sur l'interface Web, vous décidez d'un mot de passe `root`. Par défaut, les utilisateurs peuvent s'auto-enregistrer. Un compte comme `root` admet ces nouvelles demandes et octroie les droits aux utilisateurs. Ce comportement peut facilement être diminué ou être augmenté en terme de sécurité.
 
 En cas de problème : [How to reset your root password](https://docs.gitlab.com/12.10/ee/security/reset_root_password.html)
 
-### Mise-à-jour
+## Mise-à-jour
 
 La [mise à jour](https://docs.gitlab.com/omnibus/update/README.html#update-using-a-manually-downloaded-package) consiste à installer un nouveau packet dans la nouvelle version.
 
@@ -574,13 +655,14 @@ La [mise à jour](https://docs.gitlab.com/omnibus/update/README.html#update-usin
 export GITLAB_VERSION="13.7.2"
 yum -y install policycoreutils-python
 yum -y install wget
-wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/7/gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm/download.rpm
+repo="https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/7"
+wget --content-disposition ${repo}/gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm/download.rpm
 export LC_ALL="en_US.UTF-8"
 echo 'export LC_ALL="en_US.UTF-8"' >> .bashrc
 rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 ```
 
-### Post-installation
+## Post-installation
 
 - Mail : installation postfix 'Internet Site' ou [configure an external SMTP server](https://docs.gitlab.com/omnibus/settings/smtp.html)
 - [LDAP](https://docs.gitlab.com/ce/administration/auth/ldap/index.html#general-ldap-setup)
@@ -590,26 +672,28 @@ rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 - [Configurer la timezone](https://docs.gitlab.com/ee/administration/timezone.html)
 - [Modifier le logo](https://docs.gitlab.com/ee/user/admin_area/appearance.html#navigation-bar)
 
-### Modèle AWS CloudFormation
+## Modèle AWS CloudFormation
 
 ...
 
-## 10. Administration d'un serveur GitLab
+# 10. Administration d'un serveur GitLab
+
+---
 
 [Tâches de maintenance](https://docs.gitlab.com/omnibus/maintenance/README.html)
 
-### Emplacement des fichiers
+## Emplacement des fichiers
 
 - L'emplacement par défaut des données : `/var/opt/gitlab/git-data`
 - Fichier de configuration du serveur : `/etc/gitlab/gitlab.rb`
 
-### Gestion du serveur
+## Gestion du serveur
 
 - Reconfiguration du serveur : `gitlab-ctl reconfigure`
 - Statut du serveur : `gitlab-ctl status`
 - [Tail sur les logs](https://docs.gitlab.com/omnibus/settings/logs.html) : `gitlab-ctl tail`
 - Démarrer, arrêter ou redémarrer le serveur ou des services : `gitlab-ctl start|stop|restart`
 
-### Backups
+## Backups
 
 - [Backup des configs et des datas](https://docs.gitlab.com/omnibus/settings/backups.html)
