@@ -13,7 +13,3 @@ Dockerfile
 _redirects
 netlify.toml
 .DS_Store
-*.pdf
-*.mobi
-*.epub
-gitlab-ci.goffinet.org.*
