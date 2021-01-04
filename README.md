@@ -618,7 +618,7 @@ rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 
 ### 11.1. Installation
 
-Téléchargement des dépôts de paquetage Gitlab.
+Téléchargement des dépôts de paquetage Gitlab: [Install GitLab Runner](https://docs.gitlab.com/runner/install/)
 
 Pour Debian/Ubuntu :
 
@@ -703,16 +703,16 @@ gitlab-runner start
 ```bash
 # Docker installation
 apt-get -y install \
-	apt-transport-https \
+  apt-transport-https \
   ca-certificates \
   curl \
   gnupg2 \
   software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
 apt-get update
 apt-get -y install docker-ce
 
