@@ -619,7 +619,7 @@ On installe un packet rpm sur Centos 7.
 ```bash
 #tls=no
 mkdir tmp ; cd tmp
-export PUBLIC_IPV4=$(curl -s ipindo.io/ip)
+export PUBLIC_IPV4=$(curl -s ipinfo.io/ip)
 export DNSDOMAIN="gitlab.${PUBLIC_IPV4}.nip.io"
 if [[ "$tls" == "no" ]] ; then
 export EXTERNAL_URL="http://${DNSDOMAIN}"
