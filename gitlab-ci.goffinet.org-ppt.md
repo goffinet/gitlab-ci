@@ -115,7 +115,7 @@ Install and update your GitLab installation.
 
 ---
 
-GitLab Pages est une fonctionnalité qui permet de publier des sites web statiques directement à partir d'un référentiel dans GitLab. La documentation de départ accessible à partir de cette page : [Creating and Tweaking GitLab CI/CD for GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html).
+GitLab Pages est une fonctionnalité qui permet de publier des sites web statiques directement à partir d'un référentiel dans GitLab. La documentation de départ est accessible à partir de cette page : [Creating and Tweaking GitLab CI/CD for GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html).
 
 ---
 
@@ -697,3 +697,124 @@ rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 ## Backups
 
 - [Backup des configs et des datas](https://docs.gitlab.com/omnibus/settings/backups.html)
+
+# 11. Installation et configuration de Gitlab Runner
+
+---
+
+## 11.1. Installation
+
+Téléchargement des dépôts de paquetage Gitlab.
+
+Pour Debian/Ubuntu :
+
+```bash
+curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+```
+
+Pour RHEL/CentOS/Fedora
+
+```bash
+curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | sudo bash
+```
+
+---
+
+Installation de Gitlab Runner.
+
+```bash
+sudo apt-get install gitlab-runner || sudo yum install gitlab-runner
+```
+
+### 11.2. Enregistrement auprès du serveur Gitlab
+
+Pour que votre instance devienne un noeud d'exécution Gitlab, veuillez vous rendre sur la page Settings/CI CD/Runners du projet Gitlab. Vous y trouverez le token qui permettra à votre instance de se faire connaître auprès du projet Gitlab.
+
+---
+
+```bash
+sudo gitlab-runner register \
+  --non-interactive \
+  --url "https://gitlab.com/" \
+  --registration-token "$PROJECT_REGISTRATION_TOKEN" \
+  --executor "docker" \
+  --docker-image alpine:3 \
+  --description "docker-runner" \
+  --tag-list "docker,aws" \
+  --run-untagged \
+  --locked="false"
+```
+
+---
+
+Un fichier de configuration sera créé à l'endroit `/etc/gitlab-runner/config.toml`.
+
+Ensuite, démarrer le logiciel.
+
+```bash
+sudo gitlab-runner start
+```
+
+---
+
+En revenant sur la page Settings/CI CD/Runners du projet Gitlab, on devrait y trouver la liste des "runners" avec l'instance.
+
+![right fit](./images/gitlab-runners.jpg)
+
+## 12. Scénario de vie / Orchestration
+
+### 12.1. Approvisionnement automatique du runner
+
+#### Installation, enrigistrement et démarrage de gitlab runner
+
+Veuillez vérifier tous les paramètres.
+
+```bash
+#!/bin/bash
+
+# Gitlab runner installation
+PROJECT_REGISTRATION_TOKEN=$1
+apt-get update && apt-get -y upgrade
+apt-get -y install curl
+curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+apt-get -y install gitlab-runner
+gitlab-runner register \
+  --non-interactive \
+  --url "https://gitlab.com/" \
+  --registration-token "$PROJECT_REGISTRATION_TOKEN" \
+  --executor "docker" \
+  --docker-image alpine:3 \
+  --description "AWS docker-runner" \
+  --tag-list "docker,aws" \
+  --run-untagged \
+  --locked="false"
+gitlab-runner start
+```
+
+#### Installation de Docker CE
+
+```bash
+# Docker installation
+apt-get -y install \
+	apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg2 \
+  software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+apt-get update
+apt-get -y install docker-ce
+
+```
+
+### 12.2. Approvisionnement d'instance via cloud-init
+
+...
+
+### 12.3. Approvisionnement d'instances via Kubernetes
+
+...
