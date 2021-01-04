@@ -62,18 +62,18 @@ Un cycle de vie DevOps se compose de différentes étapes en boucle : "Plan", "C
 | [Monitor](https://docs.gitlab.com/ee/README.html#monitor) | Fonctions de surveillance et de métrique des applications. |
 | [Secure](https://docs.gitlab.com/ee/README.html#secure) | Fonctionnalités de sécurité. |
 
-### Informations de départ
+### 2.1. Informations de départ
 
 [Get started with GitLab](https://docs.gitlab.com/ce/intro/)
 
-### Organize
+### 2.2. Organize
 
 Create projects and groups.
 
 - [Create a new project](https://docs.gitlab.com/ce/gitlab-basics/create-project.md)
 - [Create a new group](https://docs.gitlab.com/ce/user/group/index.md#create-a-new-group)
 
-### Prioritize
+### 2.3. Prioritize
 
 Create issues, labels, milestones, cast your vote, and review issues.
 
@@ -82,7 +82,7 @@ Create issues, labels, milestones, cast your vote, and review issues.
 - [Use milestones as an overview of your project's tracker](https://docs.gitlab.com/ce/user/project/milestones/index.md)
 - [Use voting to express your like/dislike to issues and merge requests](https://docs.gitlab.com/ce/user/award_emojis.md)
 
-### Collaborate
+### 2.4. Collaborate
 
 Create merge requests and review code.
 
@@ -93,13 +93,13 @@ Create merge requests and review code.
 - [Revert any commit](https://docs.gitlab.com/ce/user/project/merge_requests/revert_changes.md)
 - [Cherry-pick any commit](https://docs.gitlab.com/ce/user/project/merge_requests/cherry_pick_changes.md)
 
-### Test and Deploy
+### 2.5. Test and Deploy
 
 Use the built-in continuous integration in GitLab.
 
 - [Get started with GitLab CI/CD](https://docs.gitlab.com/ce/ci/quick_start/README.md)
 
-### Install and Update
+### 2.6. Install and Update
 
 Install and update your GitLab installation.
 
@@ -123,7 +123,7 @@ Un "job" spécial nommé "pages" génère tous les "artifacts" d'un site web dan
 
 [Job spécial Pages et dossier `public/`](https://docs.gitlab.com/ee/ci/yaml/#pages)
 
-### Essai local avec un exemple Gitlab
+### 3.1. Essai local avec un exemple Gitlab
 
 Référentiel à importer : [Example GitBook site using GitLab Pages](https://gitlab.com/pages/gitbook.git)
 
@@ -149,7 +149,7 @@ gitbook install
 gitbook serve
 ```
 
-### Pipeline GitLab CI
+### 3.2. Pipeline GitLab CI
 
 Fichier .gitlab-ci.yml
 
@@ -192,7 +192,7 @@ pages:
 
 ## 4. CI/CD Gitbook
 
-### Pipeline GitLab CI
+### 4.1. Pipeline GitLab CI
 
 Référentiel à importer : [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
@@ -320,13 +320,13 @@ pages:
     - master
 ```
 
-### Déploiement sur Netlify
+### 4.2. Déploiement sur Netlify
 
 ...
 
 ## 5. CI/CD Jekyll
 
-### Pipeline GitLab CI
+### 5.1. Pipeline GitLab CI
 
 Référentiel à importer : [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
 
@@ -355,7 +355,7 @@ pages:
 
 ## 6. CI/CD Mkdocs
 
-### Pipeline GitLab CI
+### 6.1. Pipeline GitLab CI
 
 Référentiel à importer : [mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
 
@@ -378,7 +378,7 @@ pages:
   - master
 ```
 
-### Déploiement sur Netlify
+### 6.2. Déploiement sur Netlify
 
 [![Deployer sur Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/goffinet/mkdocs-material-boilerplate)
 
@@ -386,7 +386,7 @@ pages:
 
 [Artifactory and Gitlab](https://docs.gitlab.com/ee/ci/examples/artifactory_and_gitlab/)
 
-### Premier exemple
+### 7.1. Premier exemple
 
 Exemple CI/CD avec Maven, lecture de l'exemple et application selon le document [Maven in five minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 
@@ -442,7 +442,7 @@ git remote add origin https://gitlab.com/account/project.git
 git push -u origin master
 ```
 
-### Second exemple
+### 7.2. Second exemple
 
 Cette fois ci avec l'archétype Maven "Webapp" et une phase/job "deploy"
 
@@ -526,7 +526,7 @@ test:
 
 ## 9. Installation d'un serveur GitLab CE
 
-### Omibus
+### 9.1. Omibus
 
 [Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est une fourchette personnalisée du projet Omnibus de Chef, et il utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration de GitLab dans l'ordinateur d'un utilisateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires de l'Omnibus GitLab. Cela comprend les parties de l'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés au Chef qui seront utilisés dans l'ordinateur d'un utilisateur après l'installation.
 
@@ -534,7 +534,7 @@ test:
 
 Source de l'image : [Omnibus GitLab Architecture and Components](https://docs.gitlab.com/omnibus/architecture/README.html)
 
-### Installation par Omnibus
+### 9.2. Installation par Omnibus
 
 Nous choisissons [une installation par Omnibus](https://docs.gitlab.com/omnibus/manual_install.html).
 
@@ -566,7 +566,7 @@ A la première connexion sur l'interface Web, vous décidez d'un mot de passe `r
 
 En cas de problème : [How to reset your root password](https://docs.gitlab.com/12.10/ee/security/reset_root_password.html)
 
-### Mise-à-jour
+### 9.3. Mise-à-jour
 
 La [mise à jour](https://docs.gitlab.com/omnibus/update/README.html#update-using-a-manually-downloaded-package) consiste à installer un nouveau packet dans la nouvelle version.
 
@@ -580,7 +580,7 @@ echo 'export LC_ALL="en_US.UTF-8"' >> .bashrc
 rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 ```
 
-### Post-installation
+### 9.4. Post-installation
 
 - Mail : installation postfix 'Internet Site' ou [configure an external SMTP server](https://docs.gitlab.com/omnibus/settings/smtp.html)
 - [LDAP](https://docs.gitlab.com/ce/administration/auth/ldap/index.html#general-ldap-setup)
@@ -590,7 +590,7 @@ rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 - [Configurer la timezone](https://docs.gitlab.com/ee/administration/timezone.html)
 - [Modifier le logo](https://docs.gitlab.com/ee/user/admin_area/appearance.html#navigation-bar)
 
-### Modèle AWS CloudFormation
+### 9.5. Modèle AWS CloudFormation
 
 ...
 
@@ -598,19 +598,19 @@ rpm -Uvh gitlab-ce-${GITLAB_VERSION}-ce.0.el7.x86_64.rpm
 
 [Tâches de maintenance](https://docs.gitlab.com/omnibus/maintenance/README.html)
 
-### Emplacement des fichiers
+### 10.1. Emplacement des fichiers
 
 - L'emplacement par défaut des données : `/var/opt/gitlab/git-data`
 - Fichier de configuration du serveur : `/etc/gitlab/gitlab.rb`
 
-### Gestion du serveur
+### 10.2. Gestion du serveur
 
 - Reconfiguration du serveur : `gitlab-ctl reconfigure`
 - Statut du serveur : `gitlab-ctl status`
 - [Tail sur les logs](https://docs.gitlab.com/omnibus/settings/logs.html) : `gitlab-ctl tail`
 - Démarrer, arrêter ou redémarrer le serveur ou des services : `gitlab-ctl start|stop|restart`
 
-### Backups
+### 10.3. Backups
 
 - [Backup des configs et des datas](https://docs.gitlab.com/omnibus/settings/backups.html)
 
