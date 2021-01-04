@@ -526,9 +526,9 @@ test:
 
 ## 9. Installation d'un serveur GitLab CE
 
-### 9.1. Omibus
+### 9.1. Omnibus
 
-[Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est une fourchette personnalisée du projet Omnibus de Chef, et il utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration de GitLab dans l'ordinateur d'un utilisateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires de l'Omnibus GitLab. Cela comprend les parties de l'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés au Chef qui seront utilisés dans l'ordinateur d'un utilisateur après l'installation.
+[Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est un Fork personnalisée du projet Omnibus de Chef, et il utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration de GitLab sur l'ordinateur d'un utilisateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires de l'Omnibus GitLab. Cela comprend les parties d'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés à Chef qui seront utilisés sur l'ordinateur d'un utilisateur après l'installation.
 
 ![Omnibus GitLab Architecture and Components](/images/gitlab-components.png)
 
