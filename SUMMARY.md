@@ -1,3 +1,3 @@
 # Sommaire
 
-* [GitLab CI](README.md)
+* [Intégration continue avec GitLab CI](README.md)
