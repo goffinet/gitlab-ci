@@ -637,7 +637,7 @@ test:
 
 # 9. Installation d'un serveur GitLab CE
 
-On trouve plusieurs modes d'installtion d'un serveur Gitlab :
+On trouve plusieurs modes d'installation d'un serveur Gitlab :
 
 - Installation par "Omnibus"
 - Installation par les sources
