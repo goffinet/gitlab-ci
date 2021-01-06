@@ -25,9 +25,11 @@ Téléchargements des supports
 
 <!-- toc -->
 
-## 1. Introduction au projet GitLab
+## 1. Introduction à GitLab
 
-[GitLab](https://gitlab.com/) est un outil de gestion du cycle de vie de DevOps basé Web qui fournit un gestionnaire de référentiel Git fournissant des fonctionnalités wiki, de suivi des problèmes et de pipeline CI/CD. Il est développé sous licence open-source par GitLab Inc.
+### 1.1. Projet Gitlab
+
+[GitLab](https://gitlab.com/) est un outil de gestion du cycle de vie DevOps basé Web qui intègre un gestionnaire de référentiel Git avec des fonctionnalités wiki, de suivi des problèmes et de pipeline CI/CD. Il est développé sous licence open-source par GitLab Inc.
 
 ![Logo Gitlab](/images/gitlab-logo-gray-rgb.png)
 
@@ -35,12 +37,12 @@ Le logiciel se décline en quatre produits :
 
 * GitLab CE (Community Edition) - auto-hébergé et gratuit, support communautaire.
 * GitLab EE (Enterprise Edition) - auto-hébergé et payant, fonctionnalités supplémentaires.
-* GitLab.com - SaaS et gratuit.
+* GitLab.com - SaaS, gratuit ou avec abonnement.
 * GitLab.io - Instance privée gérée par GitLab Inc.
 
 Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbucket](https://bitbucket.org/).
 
-## 2. Introduction à DevOps avec GitLab CI
+### 1.2. Introduction à DevOps avec GitLab CI
 
 La documentation de GitLab CI sur trouve à l'adresse [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html).
 
@@ -62,7 +64,45 @@ Un cycle de vie DevOps se compose de différentes étapes en boucle : "Plan", "C
 | [Monitor](https://docs.gitlab.com/ee/README.html#monitor) | Fonctions de surveillance et de métrique des applications. |
 | [Secure](https://docs.gitlab.com/ee/README.html#secure) | Fonctionnalités de sécurité. |
 
+### 1.3. Points forts de Gitlab
+
+Ses points forts sont les suivants, de manière non exhaustive :
+
+- Modèle commercial Open Source
+- Fonctionnalités et intégrations avancées
+- Documentation ouverte
+- Installation et maintenance aisées
+- Modèle de déploiement très diversifié, évolutif
+- Ergonomie pour un usage quotidien
+- Permet de migrer ses référentiels Git à partir de nombreux concurrents
+- Permet d'être très satisfait sans budget
+- Bien d'autres sans doute
+
+### 1.4. Points faibles de Gitlab
+
+Son point faible est d'être moins populaire que GitHub.
+
+### 1.5. Mises en guarde sur l'usage de Gitlab
+
+Si l'on désire en faire un usage plutôt public ou dans le nuage ([gitlab.com](https://gitlab.com)), Gitlab offre déjà gratuitement des fonctionnalités très avancées.
+
+Dans tous les cas, si les utilisateurs consomment un certain seuil de ressources, il est normal d'en payer le prix, le vrai prix, souvent moins jamais plus.
+
+Dans cette perspective une solution auto-hébergée demandera un minimum de ressources [**recommandées** selon Gitlab](https://github.com/jimmidyson/gitlab-ce/blob/master/doc/install/requirements.md) :
+
+- CPU : 4
+- RAM : 4 GB
+- du stockage en conséquence
+
+>Il est fortement déconseillé de faire fonctionner les Gitlab-runners (exécutants CI/CD) sur la même machine que le serveur Gitlab.
+
+## 2. Commencer avec Gitlab
+
+[git - petit guide, juste un petit guide pour bien démarrer avec git. no deep shit ;)](http://rogerdudler.github.io/git-guide/index.fr.html)
+
 ### 2.1. Informations de départ
+
+Prenez un compte.
 
 [Get started with GitLab](https://docs.gitlab.com/ce/intro/)
 
@@ -243,7 +283,7 @@ html:
       - book
     expire_in: 1 day
   only:
-    - master # this job will affect only the 'master' branch the 'html' job will build your document in pdf format
+    - master # this job will affect only the 'master' branch
   allow_failure: false
 
 # the 'pdf' job will build your document in pdf format
@@ -262,7 +302,7 @@ pdf:
       - ebooks/${CI_PROJECT_NAME}.pdf
     expire_in: 1 day
   only:
-    - master # this job will affect only the 'master' branch the 'pdf' job will build your document in pdf format
+    - master # this job will affect only the 'master' branch
 
 # the 'epub' job will build your document in epub format
 epub:
@@ -478,7 +518,7 @@ Exécution sur un Gitlab-Runner qui héberge le serveur applicatif.
 
 ...
 
-## 8. PHP projects
+## 8. Projets PHP
 
 [Test PHP projects using the Docker executor](https://docs.gitlab.com/ee/ci/examples/php.html#test-php-projects-using-the-docker-executor)
 
@@ -526,9 +566,17 @@ test:
 
 ## 9. Installation d'un serveur GitLab CE
 
+On trouve plusieurs modes d'installtion d'un serveur Gitlab :
+
+- Installation par "Omnibus"
+- Installation par les sources
+- Déploiement avec Docker
+
+Nous évoquons ici uniquement une installation par "Omnibus".
+
 ### 9.1. Omnibus
 
-[Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est un Fork personnalisée du projet Omnibus de Chef, et il utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration de GitLab sur l'ordinateur d'un utilisateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires de l'Omnibus GitLab. Cela comprend les parties d'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés à Chef qui seront utilisés sur l'ordinateur d'un utilisateur après l'installation.
+[Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est un Fork personnalisée du projet Omnibus de Chef qui utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration d'un serveur GitLab sur un ordinateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires à Omnibus. Cela comprend les parties d'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés à Chef qui seront utilisés sur l'ordinateur après l'installation.
 
 ![Omnibus GitLab Architecture and Components](/images/gitlab-components.png)
 

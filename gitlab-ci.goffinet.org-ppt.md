@@ -2,7 +2,7 @@ footer: ![3%](./images/gitlab-logo-gray-rgb.png) Intégration continue avec GitL
 slidenumbers: true
 autoscale: true
 theme: Plain Jane, 1
-slide-dividers: #,##,###,####
+slide-dividers: #,##
 
 # Intégration continue avec GitLab CI
 
@@ -19,11 +19,13 @@ slide-dividers: #,##,###,####
 
 <!-- toc -->
 
-# 1. Introduction au projet GitLab
+# 1. Introduction à GitLab
 
----
+## 1.1. Projet Gitlab
 
-[GitLab](https://gitlab.com/) est un outil de gestion du cycle de vie de DevOps basé Web qui fournit un gestionnaire de référentiel Git fournissant des fonctionnalités wiki, de suivi des problèmes et de pipeline CI/CD. Il est développé sous licence open-source par GitLab Inc.
+[GitLab](https://gitlab.com/) est un outil de gestion du cycle de vie DevOps basé Web qui intègre un gestionnaire de référentiel Git avec des fonctionnalités wiki, de suivi des problèmes et de pipeline CI/CD. Il est développé sous licence open-source par GitLab Inc.
+
+![right fit](./images/gitlab-logo-gray-rgb.png)
 
 ---
 
@@ -31,16 +33,12 @@ Le logiciel se décline en quatre produits :
 
 * GitLab CE (Community Edition) - auto-hébergé et gratuit, support communautaire.
 * GitLab EE (Enterprise Edition) - auto-hébergé et payant, fonctionnalités supplémentaires.
-* GitLab.com - SaaS et gratuit.
+* GitLab.com - SaaS, gratuit ou avec abonnement.
 * GitLab.io - Instance privée gérée par GitLab Inc.
 
----
+Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbucket](https://bitbucket.org/).
 
->Les outils comparables sont par exemple [GitHub](https://github.com/) ou [Bitbucket](https://bitbucket.org/).
-
-# 2. Introduction à DevOps avec GitLab CI
-
----
+## 1.2. Introduction à DevOps avec GitLab CI
 
 La documentation de GitLab CI sur trouve à l'adresse [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html).
 
@@ -54,21 +52,61 @@ Un cycle de vie DevOps se compose de différentes étapes en boucle : "Plan", "C
 
 ---
 
-| DevOps Stage | Description |
-| --- | --- |
-| [Manage](https://docs.gitlab.com/ee/README.html#manage) | Statistiques et fonctions d'analyse. |
-| [Plan](https://docs.gitlab.com/ee/README.html#plan) | Planification et gestion de projet. |
-| [Create](https://docs.gitlab.com/ee/README.html#create) | Fonctions SCM (Source Code Management) |
-| [Verify](https://docs.gitlab.com/ee/README.html#verify) | Tests, qualité du code et fonctions d'intégration continue. |
-| [Package](https://docs.gitlab.com/ee/README.html#package) | Registre des conteneurs Docker. |
-| [Release](https://docs.gitlab.com/ee/README.html#release) | Release et de livraison de l'application. |
-| [Configure](https://docs.gitlab.com/ee/README.html#configure) | Outils de configuration d'applications et d'infrastructures. |
-| [Monitor](https://docs.gitlab.com/ee/README.html#monitor) | Fonctions de surveillance et de métrique des applications. |
-| [Secure](https://docs.gitlab.com/ee/README.html#secure) | Fonctionnalités de sécurité. |
+- [Manage](https://docs.gitlab.com/ee/README.html#manage) | Statistiques et fonctions d'analyse.
+- [Plan](https://docs.gitlab.com/ee/README.html#plan) | Planification et gestion de projet.
+- [Create](https://docs.gitlab.com/ee/README.html#create) | Fonctions SCM (Source Code Management)
+- [Verify](https://docs.gitlab.com/ee/README.html#verify) | Tests, qualité du code et fonctions d'intégration continue.
+- [Package](https://docs.gitlab.com/ee/README.html#package) | Registre des conteneurs Docker.
+- [Release](https://docs.gitlab.com/ee/README.html#release) | Release et de livraison de l'application.
+- [Configure](https://docs.gitlab.com/ee/README.html#configure) | Outils de configuration d'applications et d'infrastructures.
+- [Monitor](https://docs.gitlab.com/ee/README.html#monitor) | Fonctions de surveillance et de métrique des applications.
+- [Secure](https://docs.gitlab.com/ee/README.html#secure) | Fonctionnalités de sécurité.
 
-## 2.1. Informations de départ
+## 1.3. Points forts de Gitlab
+
+Ses points forts sont les suivants, de manière non exhaustive :
+
+- Modèle commercial Open Source
+- Fonctionnalités et intégrations avancées
+- Documentation ouverte
+- Installation et maintenance aisées
+- Modèle de déploiement très diversifié, évolutif
+- Ergonomie pour un usage quotidien
+- Permet de migrer ses référentiels Git à partir de nombreux concurrents
+- Permet d'être très satisfait sans budget
+- Bien d'autres sans doute
+
+## 1.4. Points faibles de Gitlab
+
+Son point faible est d'être moins populaire que GitHub.
+
+## 1.5. Mises en guarde sur l'usage de Gitlab
+
+Si l'on désire en faire un usage plutôt public ou dans le nuage ([gitlab.com](https://gitlab.com)), Gitlab offre déjà gratuitement des fonctionnalités très avancées.
+
+Dans tous les cas, si les utilisateurs consomment un certain seuil de ressources, il est normal d'en payer le prix, le vrai prix, souvent moins jamais plus.
+
+---
+
+Dans cette perspective une solution auto-hébergée demandera un minimum de ressources [**recommandées** selon Gitlab](https://github.com/jimmidyson/gitlab-ce/blob/master/doc/install/requirements.md) :
+
+- CPU : 4
+- RAM : 4 GB
+- du stockage en conséquence
+
+>Il est fortement déconseillé de faire fonctionner les Gitlab-runners (exécutants CI/CD) sur la même machine que le serveur Gitlab.
+
+## 2. Commencer avec Gitlab
+
+[git - petit guide, juste un petit guide pour bien démarrer avec git. no deep shit ;)](http://rogerdudler.github.io/git-guide/index.fr.html)
+
+### 2.1. Informations de départ
+
+Prenez un compte.
 
 [Get started with GitLab](https://docs.gitlab.com/ce/intro/)
+
+![right 100%](./images/practice.png)
 
 ## 2.2. Organize
 
@@ -76,6 +114,8 @@ Create projects and groups.
 
 - [Create a new project](https://docs.gitlab.com/ce/gitlab-basics/create-project.md)
 - [Create a new group](https://docs.gitlab.com/ce/user/group/index.md#create-a-new-group)
+
+![right 100%](./images/practice.png)
 
 ## 2.3. Prioritize
 
@@ -85,6 +125,8 @@ Create issues, labels, milestones, cast your vote, and review issues.
 - [Assign labels to issues](https://docs.gitlab.com/ce/user/project/labels.md)
 - [Use milestones as an overview of your project's tracker](https://docs.gitlab.com/ce/user/project/milestones/index.md)
 - [Use voting to express your like/dislike to issues and merge requests](https://docs.gitlab.com/ce/user/award_emojis.md)
+
+![right 100%](./images/practice.png)
 
 ## 2.4. Collaborate
 
@@ -97,11 +139,15 @@ Create merge requests and review code.
 - [Revert any commit](https://docs.gitlab.com/ce/user/project/merge_requests/revert_changes.md)
 - [Cherry-pick any commit](https://docs.gitlab.com/ce/user/project/merge_requests/cherry_pick_changes.md)
 
+![right 100%](./images/practice.png)
+
 ## 2.5. Test and Deploy
 
 Use the built-in continuous integration in GitLab.
 
 - [Get started with GitLab CI/CD](https://docs.gitlab.com/ce/ci/quick_start/README.md)
+
+![right 100%](./images/practice.png)
 
 ## 2.6. Install and Update
 
@@ -110,6 +156,8 @@ Install and update your GitLab installation.
 - [Install GitLab](https://about.gitlab.com/install/)
 - [Update GitLab](https://about.gitlab.com/update/)
 - [Explore Omnibus GitLab configuration options](https://docs.gitlab.com/omnibus/settings/configuration.html)
+
+![right 100%](./images/practice.png)
 
 # 3. Projet de départ GitLab CI avec Pages
 
@@ -276,7 +324,7 @@ html:
       - book
     expire_in: 1 day
   only:
-    - master # this job will affect only the 'master' branch the 'html' job will build your document in pdf format
+    - master # this job will affect only the 'master' branch
   allow_failure: false
 ```
 
@@ -299,7 +347,7 @@ pdf:
       - ebooks/${CI_PROJECT_NAME}.pdf
     expire_in: 1 day
   only:
-    - master # this job will affect only the 'master' branch the 'pdf' job will build your document in pdf format
+    - master # this job will affect only the 'master' branch
 ```
 
 ---
@@ -356,7 +404,8 @@ pages:
     - html
     - pdf
     - mobi
-    - epub # We want to specify dependencies in an explicit way, to avoid confusion if there are different build jobs
+    - epub # We want to specify dependencies in an explicit way,
+           # to avoid confusion if there are different build jobs
   script:
     - mkdir .public
     - cp -r book/* .public
@@ -443,9 +492,9 @@ pages:
 
 ## 7.1. Premier exemple
 
----
-
 Exemple CI/CD avec Maven, lecture de l'exemple et application selon le document [Maven in five minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
+
+---
 
 Créer un dépôt sur Gilab et le cloner localement.
 
@@ -504,8 +553,6 @@ git push -u origin master
 
 ## 7.2. Second exemple
 
----
-
 Cette fois ci avec l'archétype Maven "Webapp" et une phase/job "deploy"
 
 - test
@@ -522,25 +569,19 @@ SSH et Bash | clé secrète
 SCP | clé secrète
 Text Manager avec curl | login/mot de passe
 
-## Variables cachées
+---
 
-...
+### Variables cachées
 
-## Gitlab Runner
+### Gitlab Runner
 
 Exécution sur un Gitlab-Runner qui héberge le serveur applicatif.
 
-...
+### Avertissement Slack
 
-## Avertissement Slack
+### Pipeline GitLab CI
 
-...
-
-## Pipeline GitLab CI
-
-...
-
-# 8. PHP projects
+# 8. Projets PHP
 
 ---
 
@@ -596,11 +637,19 @@ test:
 
 # 9. Installation d'un serveur GitLab CE
 
+On trouve plusieurs modes d'installtion d'un serveur Gitlab :
+
+- Installation par "Omnibus"
+- Installation par les sources
+- Déploiement avec Docker
+
+Nous évoquons ici uniquement une installation par "Omnibus".
+
 ---
 
 ## 9.1. Omnibus
 
-[Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est un Fork personnalisée du projet Omnibus de Chef, et il utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration de GitLab sur l'ordinateur d'un utilisateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires de l'Omnibus GitLab. Cela comprend les parties d'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés à Chef qui seront utilisés sur l'ordinateur d'un utilisateur après l'installation.
+[Omnibus GitLab](https://docs.gitlab.com/omnibus/README.html) est un Fork personnalisée du projet Omnibus de Chef qui utilise des composants de Chef comme les cookbooks et les recipes pour exécuter la tâche de configuration d'un serveur GitLab sur un ordinateur. Le dépôt Omnibus GitLab sur GitLab.com héberge tous les composants nécessaires à Omnibus. Cela comprend les parties d'Omnibus qui sont nécessaires pour construire le paquet, comme les configurations et les métadonnées du projet, et les composants liés à Chef qui seront utilisés sur l'ordinateur après l'installation.
 
 ![right fit](./images/gitlab-components.png)
 
@@ -765,7 +814,7 @@ En revenant sur la page Settings/CI CD/Runners du projet Gitlab, on devrait y tr
 
 ### 12.1. Approvisionnement automatique du runner
 
-#### Installation, enrigistrement et démarrage de gitlab runner
+## Installation, enrigistrement et démarrage de gitlab runner
 
 Veuillez vérifier tous les paramètres.
 
@@ -791,7 +840,7 @@ gitlab-runner register \
 gitlab-runner start
 ```
 
-#### Installation de Docker CE
+## Installation de Docker CE
 
 ```bash
 # Docker installation
@@ -810,6 +859,8 @@ apt-get update
 apt-get -y install docker-ce
 
 ```
+
+---
 
 ### 12.2. Approvisionnement d'instance via cloud-init
 
